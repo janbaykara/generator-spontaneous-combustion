@@ -1,0 +1,15 @@
+{
+  "name": "lorem-ipsum",
+  "version": "0.0.0",
+  "devDependencies": {
+    "bower": "*",
+    "grunt": "~0.4.1",
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-autoprefixer": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-devtools": "*",
+    "grunt-sass": "0.14.0"
+  }
+}

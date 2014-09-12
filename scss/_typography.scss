@@ -1,0 +1,29 @@
+/* ---------- ==========================================
+  TYPOGRAPHY
+*/
+
+$thin: 200;
+$light: 300;
+$normal: 400;
+$medium: 600;
+$bold: 800;
+$black: 900;
+
+.brand-font {
+  font-family: 'Helvetica', 'sans-serif' !important;
+}
+
+body, input, textarea {
+  @extend .brand-font;
+}
+  
+* {
+  @extend .prevent-text-breakouts;
+}
+
+h1,h2,h3,h4,h5 {
+  &, & * {
+    @extend .brand-font;
+    letter-spacing: -0.0075em;
+  }
+}

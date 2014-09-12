@@ -1,0 +1,8 @@
+/* Lorem Ipsum was designed by Peter Bingham and developed by Jan Baykara, for Boom Online Marketing */
+/* boom-online.co.uk */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: AngularJS, Sass, Foundation
+  Software: Sublime Text, Git
