@@ -110,8 +110,11 @@ class App {
     <!-- CSS -->
         <link  href='css/app.min.css' rel='stylesheet' type='text/css'>
 
-    <!-- Javascript -->
+    <!-- JS Libs -->
         <script src='bower_components/angular/angular.min.js'></script>
+
+    <!-- JS Logic -->
+        <script src='js/app.min.js'></script>
 
     </head>
     <body {$this->BODYINJECT}>
@@ -139,9 +142,6 @@ HTML;
         <div class="copyright">{$this->COPYRIGHT}</div>
       </div>
     </footer>
-
-    <!-- Application JS -->
-    <script src='js/app.min.js'></script>
 
     <!-- Google Analytics -->
     <script>
