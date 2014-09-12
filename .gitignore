@@ -1,5 +1,11 @@
-*.DS_Store
+.DS_Store
 /css/*
-/bower_components/*
-/node_modules/*
+bower_components/
+node_modules/
 .sass-cache
+logs/*
+!.gitkeep
+tmp
+.DS_Store
+.idea
+app.min.js

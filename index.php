@@ -2,7 +2,7 @@
 require(dirname(__FILE__)."/php/config.php");
 
 $app = new App();
-$app->HTMLINJECT = "ng-app='lorem-ipsum'";
+$app->HTMLINJECT = "ng-app";
 $app->BODYINJECT = null;
 $app->PAGETITLE = "KAKAW";
 
