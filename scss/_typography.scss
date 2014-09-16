@@ -18,12 +18,14 @@ body, input, textarea {
 }
   
 * {
-  @extend .prevent-text-breakouts;
+	@extend .prevent-text-breakouts;
+	-webkit-font-smoothing: antialiased;
 }
 
 h1,h2,h3,h4,h5 {
   &, & * {
     @extend .brand-font;
     letter-spacing: -0.0075em;
+    line-height: 1.1em;
   }
 }
