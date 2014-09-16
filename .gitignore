@@ -1,11 +1,22 @@
-.DS_Store
-/css/*
+# NPM / Bower
 bower_components/
 node_modules/
+
+# Grunt generated
 .sass-cache
-logs/*
-!.gitkeep
-tmp
-.DS_Store
-.idea
+/css/*
 app.min.js
+
+# Composer
+composer.lock
+composer.phar
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# Misc
+logs/*
