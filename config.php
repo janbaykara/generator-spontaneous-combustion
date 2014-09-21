@@ -30,16 +30,19 @@ class App {
       $this->COPYRIGHT      = $this->PUBLISHER." &copy; ".date("Y");
 
       // URLs
-      $this->BASEURL        = "/playground/lorem-ipsum";
+      $this->BASEURL        = "";
       $this->ASSETURL       = $this->BASEURL;
-      $this->CSSURL         = $this->ASSETURL."/css";
-      $this->JSURL          = $this->ASSETURL."/js";
-      $this->IMGURL         = $this->ASSETURL."/img";
-      $this->LOGO           = $this->IMGURL."/logo.png";
+      $this->CSSURL         = $this->ASSETURL."public/css";
+      $this->JSURL          = $this->ASSETURL."public/js";
+      $this->IMGURL         = $this->ASSETURL."public/img";
 
       // Miscellaneous
       $this->SCHEMAROOT     = "WebPage";
       $this->ANALYTICSCODE  = "xx";
+
+      // HTML
+      $this->BODYINJECT = "";
+      $this->HTMLINJECT = "";
   }
 
   // ======================
@@ -108,13 +111,13 @@ class App {
         <meta property="og:image" content="{$this->LOGO}" />
 
     <!-- CSS -->
-        <link  href='css/app.min.css' rel='stylesheet' type='text/css'>
+        <link href='{$this->CSSURL}/app.min.css' rel='stylesheet' type='text/css'>
 
-    <!-- JS Libs -->
+    <!-- JS -->
         <script src='bower_components/angular/angular.min.js'></script>
 
-    <!-- JS Logic -->
-        <script src='js/app.min.js'></script>
+    <!-- JS -->
+        <script src='{$this->JSURL}/app.min.js'></script>
 
     </head>
     <body {$this->BODYINJECT}>

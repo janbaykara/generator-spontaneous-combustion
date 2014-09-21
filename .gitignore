@@ -2,10 +2,9 @@
 bower_components/
 node_modules/
 
-# Grunt generated
+# Gulp generated
 .sass-cache
-/css/*
-app.min.js
+public
 
 # Composer
 composer.lock

@@ -1,5 +1,5 @@
 <?php
-require(dirname(__FILE__)."/php/config.php");
+require("config.php");
 
 $app = new App();
 $app->HTMLINJECT = "ng-app='app'";
