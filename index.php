@@ -1,14 +1,14 @@
-<?php
-require("config.php");
+<?php require("config.php");
 
 $app = new App();
 $app->HTMLINJECT = "ng-app='app'";
 // $app->BODYINJECT;
 // $app->PAGETITLE;
 
-$app->SCAFFOLD_HEAD();
-?>
+$app->document_head(); ?>
+
 <main id="wrapper" ng-controller="mainController">
 	Hello {{world}}.
 </main>
-<? $app->SCAFFOLD_FOOT() ?>
+
+<? $app->document_foot() ?>

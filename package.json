@@ -2,6 +2,7 @@
   "name": "boilerplate",
   "version": "0.0.0",
   "devDependencies": {
+    "del": "*",
     "bower": "*",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "*",
@@ -12,7 +13,6 @@
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
     "gulp-svgmin": "*",
-    "gulp-uglify": "*",
-    "del": "*"
+    "gulp-uglify": "*"
   }
 }

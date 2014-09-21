@@ -1,5 +1,5 @@
 # NPM / Bower
-bower_components/
+vendor/
 node_modules/
 
 # Gulp generated
