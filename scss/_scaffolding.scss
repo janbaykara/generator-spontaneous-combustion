@@ -2,18 +2,16 @@
    GLOBAL SCAFFOLD
 
    # ??? Consider integrating the better suggestions from http://www.google.com/design/spec/layout/metrics-and-keylines.html#metrics-and-keylines-ratio-keylines
-   # ??? Generally tighten up elements post-alpha
-   
 */
 
 body {
   overflow-x: hidden;
+  padding: 40px 0px;
 }
 
-main > * {
-	@extend .row;
-	
-	& > * {
-		@extend .column;
+#document-foot {
+	&, * { 
+		color: #888;
+		font-size: 95%;
 	}
 }

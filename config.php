@@ -135,6 +135,10 @@ class App {
           <meta property="og:description" content="{$this->DESCRIPTION_LONG}" />
           <meta property="og:image" content="{$this->SHARE_IMG}" />
 
+      <!-- Font Icon set: font awesome from BootstrapCDN 
+          Example: https://fortawesome.github.io/Font-Awesome/examples/
+          Library: https://fortawesome.github.io/Font-Awesome/icons/
+       --><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
       <!-- CSS -->
           <link href='{$this->CSSURL}/app.min.css' rel='stylesheet' type='text/css'>
