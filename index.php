@@ -8,7 +8,7 @@ $app->PAGETITLE = "KAKAW";
 
 $app->SCAFFOLD_HEAD();
 ?>
-<main id="wrapper">
-Hello world.
+<main id="wrapper" ng-controller="mainController">
+	Hello {{world}}.
 </main>
 <? $app->SCAFFOLD_FOOT() ?>
