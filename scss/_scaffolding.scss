@@ -9,3 +9,11 @@
 body {
   overflow-x: hidden;
 }
+
+main > * {
+	@extend .row;
+	
+	& > * {
+		@extend .column;
+	}
+}
