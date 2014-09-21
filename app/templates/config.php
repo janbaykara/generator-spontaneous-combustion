@@ -26,13 +26,13 @@ class App {
         These config vars should probably always be changed for projects 
       */
           // Project strings
-          $this->PUBLISHER      = "Boom Online Marketing Ltd.";
-          $this->PROJECTNAME    = "Project Boilerplate";
-          $this->DESCRIPTION    = "Never underestimate the power of stupid people in large groups."; // No longer than 155 characters.
+          $this->PUBLISHER      = "<%= PUBLISHER %>";
+          $this->PROJECTNAME    = "<%= PROJECTNAME %>";
+          $this->DESCRIPTION    = "<%= DESCRIPTION %>"; // No longer than 155 characters.
           $this->DESCRIPTION_LONG = $this->DESCRIPTION; // 200 chars
           // URLS
           $this->BASEURL        = ""; // This should be set to an absolute value on deployment, for social media linking purposes.
-          $this->SHARE_IMG      = "logo.png";
+          $this->SHARE_IMG      = "logo.png"; // For social media
           // Analytics
           $this->SCHEMAROOT     = "WebPage";
           $this->ANALYTICSCODE  = "xx"; // Replace this

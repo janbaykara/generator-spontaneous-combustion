@@ -1,0 +1,21 @@
+# NPM / Bower
+vendor/
+node_modules/
+
+# Gulp generated
+.sass-cache
+public
+
+# Composer
+composer.lock
+composer.phar
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# Misc
+logs/*

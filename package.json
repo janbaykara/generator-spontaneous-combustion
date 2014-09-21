@@ -1,18 +1,28 @@
 {
   "name": "generator-spontaneous-combustion",
-  "version": "0.2.0",
-  "devDependencies": {
-    "bower": "*",
-    "gulp": "^3.8.8",
-    "del": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-cache": "*",
-    "gulp-concat": "*",
-    "gulp-imagemin": "*",
-    "gulp-rename": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-svgmin": "*",
-    "gulp-uglify": "*"
+  "version": "0.3.0",
+  "description": "Yeoman generator for a barebones SCSS-styled, Foundation-frameworked, AngularJS-wired, PHP-infrastructued web app.",
+  "license": "MIT",
+  "main": "app/index.js",
+  "author": {
+    "name": "Jan Baykara",
+    "email": "jan@baykara.co.uk",
+    "url": "https://github.com/janbaykara"
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/janbaykara/generator-spontaneous-combustion.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.17.0",
+    "yosay": "^0.3.0",
+    "chalk": "*",
+    "async": "~0.2.9"
   }
 }
