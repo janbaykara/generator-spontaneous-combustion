@@ -7,24 +7,39 @@
 
 Before you get cracking with the project, you need to do a one-off check for a few minor bits and bobs.
 
-If you haven't already, [install NodeJS, Bower and Gulp](http://travismaynard.com/writing/getting-started-with-gulp)
+If you haven't already:
+1. Install **NodeJS + NPM**:
+  ` $ curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash `
+2. Install **Yo**:
+  ` $ npm install -g yo `
+  (an automagical boilerplate generator tool)
+3. Install **Bower**:
+  ` $ npm install -g bower `
+  (a webdev package manager for things like *AngularJS*, *Foundation*; and...)
+4. Install **Gulp**
+  ` $ npm install -g gulp `
+  (a webdev task runner watch the files in the project directory and automatically run tasks to compile SASS, optimise images, uglify files and all sorts of other magic.)
 
-- **NodeJS** comes with **NPM**, a general software package manager, which we'll use to install...
-- ` $ sudo npm install -g `**bower** a webdev package manager for things like *AngularJS*, *Foundation*; and...
-- ` $ sudo npm install -g `**gulp**, a webdev task runner watch the files in the project directory and automatically run tasks to compile SASS, optimise images, uglify files and all sorts of other magic.
+### Installation
 
-### Boilerplate installation
-
+#### Method 1: Git Clone
 1. Clone this boilerplate to your project directory
 2. In terminal, we need to install the common dependencies specified in `package.json` and `bower.json`
-  - ` $ cd ~/where/your/project/file/is `
+  - ` $ cd ~/your/project/dir `
   - ` $ sudo npm install `
   - ` $ bower install `
 3. Now that all our dependencies are installed, we can start up Gulp and get working:
   - ` $ gulp `
   - (NB: Run this in the project directory whenever you're developing)
 
+#### Method 2: Yo Generator
+1. ` $ npm install -g generator-spontaneous-combustion `
+2. ` $ cd ~/your/project/dir `
+3. ` $ yo spontaneous-combustion ` 
+
 ### Configuration & Development Pointers
+
+Run `gulp` in the project directory whenever developing.
 
 #### Files & Directories
 
@@ -47,8 +62,8 @@ If you haven't already, [install NodeJS, Bower and Gulp](http://travismaynard.co
   - ` !!! `: Fix incorrect functionality / error / glitch
 
 ### Notes/To Dos
-- Set up yeoman generator for this (take inspiration)
+- Setup yeoman generator
 - Gulp improvements: http://yeoman.io/blog/performance-optimization.html
 - RequireJS implementation
-- Better SCSS/JS concat
+- Better SCSS concat & sourcemaps
 - PHP -> HTML gulp task 
