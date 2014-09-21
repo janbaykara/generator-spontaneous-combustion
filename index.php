@@ -2,9 +2,9 @@
 require(dirname(__FILE__)."/php/config.php");
 
 $app = new App();
-$app->HTMLINJECT = "ng-app";
-$app->BODYINJECT = null;
-$app->PAGETITLE = "KAKAW";
+$app->HTMLINJECT = "ng-app='app'";
+// $app->BODYINJECT;
+// $app->PAGETITLE;
 
 $app->SCAFFOLD_HEAD();
 ?>
