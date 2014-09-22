@@ -10,17 +10,14 @@ Before you get cracking...
   - ` $ curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash `
   - ` $ nvm install v0.11.13 `
   - ` $ nvm alias default v0.11.13 `
-2. Install **Yo**:
-  - ` $ npm install -g yo `
-3. Install **Bower**:
-  - ` $ npm install -g bower `
-4. Install **Gulp**
-  - ` $ npm install -g gulp `
+2. Install **Yo**, **Bower**, **Gulp**:
+  - ` $ npm install -g yo bower gulp `
+3. Install the generator
+  - ` $ npm install -g generator-spontaneous-combustion `
 
-### Installation via Yo
-1. ` $ npm install -g generator-spontaneous-combustion `
-2. ` $ cd ~/your/project/dir `
-3. ` $ yo spontaneous-combustion ` 
+### Setting up a new project
+1. ` $ cd ~/your/project/dir `
+2. ` $ yo spontaneous-combustion ` 
 
 ### Config & Dev
 
