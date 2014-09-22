@@ -7,15 +7,15 @@
 Before you get cracking...
 
 1. Install **NodeJS + NPM**:
-  ` $ curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash `
-  ` $ nvm install v0.11.13 `
-  ` $ nvm alias default v0.11.13 `
+  - ` $ curl https://raw.githubusercontent.com/creationix/nvm/v0.16.1/install.sh | bash `
+  - ` $ nvm install v0.11.13 `
+  - ` $ nvm alias default v0.11.13 `
 2. Install **Yo**:
-  ` $ npm install -g yo `
+  - ` $ npm install -g yo `
 3. Install **Bower**:
-  ` $ npm install -g bower `
+  - ` $ npm install -g bower `
 4. Install **Gulp**
-  ` $ npm install -g gulp `
+  - ` $ npm install -g gulp `
 
 ### Installation via Yo
 1. ` $ npm install -g generator-spontaneous-combustion `
