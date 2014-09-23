@@ -42,7 +42,9 @@ Run `gulp` in the project directory whenever developing.
 
 ### Notes/To Dos
 
-- [X] Setup yeoman generator
+- [ ] https://gist.github.com/fat/a47b882eb5f84293c4ed / https://github.com/suitcss
+- [ ] Separate z-index.scss file.
+- [ ] Replace index.scss with more generic elemental files
 - [ ] Gulp improvements: http://yeoman.io/blog/performance-optimization.html
 - [ ] RequireJS implementation
 - [ ] Better SCSS concat & sourcemaps
