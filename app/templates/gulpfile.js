@@ -51,11 +51,14 @@ var gulp = require('gulp'),
 
 	gulp.task('sass', function () {
 		return gulp.src(dev.sass)
-		.pipe(sass({sourceComments: 'map', outputStyle: 'compressed', includePaths : ['vendor/foundation/scss'], errLogToConsole: true }))
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
+		.pipe(sourcemaps.init())
+		.pipe(sass({
+			outputStyle: 'compressed',
+			includePaths : ['vendor/foundation/scss'],
+			errLogToConsole: true
 		}))
+		// .pipe(autoprefixer("last 1 version", "> 1%", "ie 8", "ie 7"))
+		.pipe(sourcemaps.write())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(build.css));
 	});
