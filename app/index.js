@@ -49,6 +49,7 @@ var SpontaneousCombustionGenerator = yeoman.generators.Base.extend({
       this.template("package.json", "package.json", context);
       this.template("bower.json", "bower.json", context);
       this.template("config.php", "config.php", context);
+      this.template(".gitignore", ".gitignore", context);
   },
 
   install: function() {
