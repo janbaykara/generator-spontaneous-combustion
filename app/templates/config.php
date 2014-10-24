@@ -21,9 +21,9 @@ class App {
   | Global defines - edit to your heart's content.
   |-----------------------------------------------
   |
-  */ 
+  */
       /*-------------------------
-        These config vars should probably always be changed for projects 
+        These config vars should probably always be changed for projects
       */
           // Project strings
           $this->PUBLISHER      = "<%= PUBLISHER %>";
@@ -73,14 +73,14 @@ class App {
 
           <!-- ********************************
           *
-          *   Powered by cynicism and hayfever. 
+          *   Powered by cynicism and hayfever.
           *
           ********************************* -->
 
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          
+
         <!-- Mass of favicon data, courtesy of the http://faviconit.com/ generator -->
           <link rel="apple-touch-icon-precomposed" sizes="57x57" href="fav/apple-touch-icon-57x57.png" />
           <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fav/apple-touch-icon-114x114.png" />
@@ -102,7 +102,7 @@ class App {
           <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
           <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-      <!-- Metadata 
+      <!-- Metadata
       Test these with:
         - https://cards-dev.twitter.com/validator
         - https://developers.facebook.com/tools/debug
@@ -113,10 +113,6 @@ class App {
           <meta itemprop="name" content="{$this->PROJECTNAME}" />
           <meta itemprop="description" content="{$this->DESCRIPTION}" name="description"/>
           <meta itemprop="image" content="{$this->SHARE_IMG}" />
-
-          <!-- Google Authorship and Publisher Markup -->
-          <link rel="author" href="https://plus.google.com/{$this->GOOGLE_PROFILE_AUTHOR}/posts"/>
-          <link rel="publisher" href='https://plus.google.com/{$this->GOOGLE_PAGE_PROFILE}'/>
 
           <!-- \\ Twitter Card -->
           <meta name="twitter:title" content="{$this->PAGETITLE}">
