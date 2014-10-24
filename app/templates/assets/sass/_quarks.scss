@@ -1,0 +1,23 @@
+/* -------
+  Quarks
+*/
+
+//
+.em4 { font-size: 4em; letter-spacing: -0.03em; }
+.em2 { font-size: 2em; letter-spacing: -0.01em; }
+.em_8 { font-size: 0.8em; }
+
+//
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+
+//
+.inherit {
+  display: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+

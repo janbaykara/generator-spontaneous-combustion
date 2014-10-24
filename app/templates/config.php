@@ -52,10 +52,10 @@ class App {
           $this->COPYRIGHT      = $this->PUBLISHER." &copy; ".date("Y");
           // Filepaths
           $this->ASSETURL       = $this->BASEURL; // Where img/css/js/libraries are held on server
-          $this->BOWER          = $this->ASSETURL."vendor";
-          $this->CSSURL         = $this->ASSETURL."public/css";
-          $this->JSURL          = $this->ASSETURL."public/js";
-          $this->IMGURL         = $this->ASSETURL."public/img";
+          $this->BOWER          = $this->ASSETURL."bower_components";
+          $this->CSSURL         = $this->ASSETURL."public/styles";
+          $this->JSURL          = $this->ASSETURL."public/scripts";
+          $this->IMGURL         = $this->ASSETURL."public/images";
   }
 
   /*==============================================*==============================================*==============================================
@@ -135,15 +135,13 @@ class App {
           <meta property="og:description" content="{$this->DESCRIPTION_LONG}" />
           <meta property="og:image" content="{$this->SHARE_IMG}" />
 
-      <!-- Font Icon set: font awesome from BootstrapCDN 
+      <!-- Font Icon set: font awesome from BootstrapCDN
           Example: https://fortawesome.github.io/Font-Awesome/examples/
           Library: https://fortawesome.github.io/Font-Awesome/icons/
        --><link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-      <!-- CSS -->
-          <link href='{$this->CSSURL}/app.min.css' rel='stylesheet' type='text/css'>
-
-      <!-- JS -->
+      <!-- Assets -->
+          <link rel="stylesheet" type="text/css" href="{$this->CSSURL}/app.min.css">
           <script src='{$this->JSURL}/libs.min.js'></script>
           <script src='{$this->JSURL}/app.min.js'></script>
 

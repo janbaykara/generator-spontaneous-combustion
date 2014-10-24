@@ -1,0 +1,33 @@
+/* ------
+  Type
+*/
+
+// Typefaces
+%body-type {
+  font: 16px/1.3em 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+%header-type {
+  @extend %body-type;
+}
+
+// Applied
+html, body {
+  @extend %body-type;
+}
+
+#{$headings} {
+  @extend %header-type;
+}
+
+// Rendering
+* {
+  font: {
+    feature-settings: "kern";
+    kerning: normal;
+    smoothing: antialiased;
+  }
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  hyphens: auto;
+}

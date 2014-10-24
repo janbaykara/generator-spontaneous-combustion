@@ -1,0 +1,62 @@
+// ------
+// Colors
+
+// Defined colors
+$brand-color: 		  	#fc1023;
+$complementary-color: adjust_hue($brand-color, 180);
+$secondary-color: 	  adjust_hue($brand-color, 120);
+$tertiary-color: 	  	adjust_hue($brand-color, -120);
+
+$text-color:         	#333;
+$background-color:   	#fff;
+
+$link-color:          $complementary-color;
+$link-color-hover:    lighten($link-color,10%);
+$link-color-active:   lighten($link-color,20%);
+$link-color-visited:  $link-color;
+
+// ------
+// Queries
+
+$queries: small #{"screen and (min-width: 0em)"},
+          medium #{"screen and (min-width: 48em)"},
+          large #{"screen and (min-width: 64em)"};
+
+@mixin break($point) {
+  @each $query in $queries {
+    @if $point == nth($query, 1) {
+      @media #{nth($query, 2)} {
+        @content;
+      }
+    }
+  }
+}
+
+// ------
+// Z-Index Registry
+
+// 100 : Background elements
+$z-bg: 100;
+// 200 :
+// 300 :
+// 400 : Default, DOM-ordered
+$z-index: 400;
+// 500 :
+// 600 :
+// 700 : Fixed-position UI elements
+$z-ui: 700;
+// 800 :
+// 900 : Think tooltips, modals
+$z-hover: 900;
+
+// ------
+// Fontweights
+$weight-hair: 100;
+$weight-thin: 200;          // *
+$weight-light: 300;
+$weight-regular: 400;       // *
+$weight-lightmedium: 500;
+$weight-medium: 600;        // *
+$weight-semibold: 700;
+$weight-bold: 800;          // *
+$weight-black: 900;

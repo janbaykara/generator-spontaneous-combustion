@@ -1,0 +1,16 @@
+/* ------
+  Skeleton
+*/
+
+* {
+  transition: all 0.25s cubic-bezier(.54,.27,.27,.91);
+  box-sizing: border-box;
+}
+
+::selection { color: $brand-color;  background: $background-color; }
+
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1em;
+}

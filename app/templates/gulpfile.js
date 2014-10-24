@@ -1,118 +1,153 @@
-/* ----------------------------------------------------------------
-|  Libs
-*/
+// Dependencies
+var gulp = require('gulp')
+  , gulpLoadPlugins = require('gulp-load-plugins')
+  , mainBowerFiles = require('main-bower-files')
+  , browserSync = require('browser-sync')
+  , browserReload = browserSync.reload
 
-var gulp = require('gulp'),
-	del = require('del'),
-	sass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-	imagemin = require('gulp-imagemin'),
-	sourcemaps = require('gulp-sourcemaps'),
-	svgmin = require('gulp-svgmin'),
-	rename = require('gulp-rename'),
-	cache = require('gulp-cache'),
-	install = require('gulp-install')
+// Autoload Gulp tasks from package.json
+var plugins = gulpLoadPlugins();
 
-/* ----------------------------------------------------------------
-|  Filepaths
-*/
+// Paths
+var dirs = {
+  dev: {
+    config:  ['bower.json','package.json'],
+    img:     ['assets/img/**/*.jpg',
+              'assets/img/**/*.jpeg',
+              'assets/img/**/*.gif',
+              'assets/img/**/*.png'],
+    svg:     ['assets/img/**/*.svg'],
+    js:      ['assets/js/*.js'],
+    data:    ['assets/data/*.json'],
+    sass:    ['assets/sass/*.scss'],
+    fonts:   ['assets/fonts/*'],
+    html:    ['assets/html/*']
+  },
+  prod: {
+    images:   'public/images',
+    scripts:  'public/scripts',
+    styles:   'public/styles',
+    views:    'public/views'
+  }
+}
 
-	// Development files
-	var dev = {
-		config: ['bower.json','package.json'],
-		img: ['img/**/*.jpg','img/**/*.jpeg','img/**/*.gif','img/**/*.png'],
-		svg: ['img/**/*.svg'],
-		js: ['js/*.js'],
-		jslibs: ['vendor/angular/angular.min.js','vendor/angular-foundation/mm-foundation-tpls.min.js'],
-		sass: ['scss/*.scss']
-	};
+gulp.task('install', function () {
+  return gulp.src(dirs.dev.config)
+  .pipe(plugins.install());
+});
 
-	// Compiled build assets
-	var build = {
-		img: 'public/img',
-		js: 'public/js',
-		css: 'public/css'
-	};
+// ----------------------------------------------------------------
+// Styles
 
-	gulp.task('clean', function(cb) {
-		del(['public/**/*'], cb)
-	});
+  gulp.task('styles', function () {
+    gulp.src(dirs.dev.sass)
+    .pipe(plugins.sass({
+        errLogToConsole: true
+    }))
+    .pipe(plugins.autoprefixer("last 1 version", "> 1%", "ie 8", "ie 7"))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(plugins.minifyCss())
+    // .pipe(plugins.csslint({
+    //     'compatible-vendor-prefixes': false,
+    //     'box-sizing': false,
+    //     'important': false,
+    //     'known-properties': false
+    // }))
+    // .pipe(plugins.csslint.reporter())
+    .pipe(plugins.rename({suffix: '.min'}))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(gulp.dest(dirs.prod.styles))
+    .pipe(browserSync.reload({stream:true}));
+  });
 
-	gulp.task('install', function () {
-		gulp.src(dev.config)
-		.pipe(install());
-	});
+  gulp.task('fonts', function() {
+    gulp.src(dirs.dev.fonts)
+    .pipe(gulp.dest(dirs.prod.styles));
+  });
 
-/* ----------------------------------------------------------------
-|  SASS/SCSS
-*/
+// ----------------------------------------------------------------
+// Javascript
 
-	gulp.task('sass', function () {
-		return gulp.src(dev.sass)
-		.pipe(sourcemaps.init())
-		.pipe(sass({
-			outputStyle: 'compressed',
-			includePaths : ['vendor/foundation/scss'],
-			errLogToConsole: true
-		}))
-		// .pipe(autoprefixer("last 1 version", "> 1%", "ie 8", "ie 7"))
-		.pipe(sourcemaps.write())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(build.css));
-	});
+  // Vendor JS
+  gulp.task('libs', function() {
+    gulp.src(mainBowerFiles(), { base: 'vendor' })
+    .pipe(plugins.concat('libs.min.js'))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(plugins.uglify({mangle: false}))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(gulp.dest(dirs.prod.scripts));
+  });
 
-/* ----------------------------------------------------------------
-|  Javascript
-*/
+  // Project JS
+  gulp.task('scripts', function() {
+    gulp.src(dirs.dev.js)
+    .pipe(plugins.concat('app.min.js'))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(plugins.uglify({mangle: false}))
+    .pipe(plugins.size({showFiles: true}))
+    .pipe(gulp.dest(dirs.prod.scripts));
+  });
 
-	// Vendor JS
-	gulp.task('jslibs', function() {
-		return gulp.src(dev.jslibs)
-		.pipe(concat('libs.min.js'))
-		.pipe(uglify({mangle: false}))
-		.pipe(gulp.dest(build.js));
-	});
+  // Datafiles
+  gulp.task('data', function() {
+    gulp.src(dirs.dev.data)
+    .pipe(gulp.dest(dirs.prod.scripts));
+  });
 
-	// Project JS
-	gulp.task('js', function() {
-		return gulp.src(dev.js)
-		.pipe(sourcemaps.init())
-		.pipe(concat('app.min.js'))
-		.pipe(uglify({mangle: false}))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(build.js));
-	});
+  // Datafiles
+  gulp.task('views', function() {
+    gulp.src(dirs.dev.html)
+    .pipe(gulp.dest(dirs.prod.views));
+  });
 
-/* ----------------------------------------------------------------
-|  Images
-*/
+// ----------------------------------------------------------------
+// Images
 
-	gulp.task('img', function() {
-		return gulp.src(dev.img)
-		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-		.pipe(gulp.dest(build.img));
-	});
+    gulp.task('rasters', function() {
+      gulp.src(dirs.dev.img)
+      .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+      .pipe(gulp.dest(dirs.prod.images));
+    });
 
-	gulp.task('svg', function() {
-		return gulp.src(dev.svg)
-		.pipe(svgmin())
-		.pipe(gulp.dest(build.img));
-	});
+    gulp.task('vectors', function() {
+      gulp.src(dirs.dev.svg)
+      .pipe(plugins.svgmin())
+      .pipe(plugins.replace(/_[0-9]+_/g, '')) // Illustrator SVGs; strip appended strings from id names
+      .pipe(gulp.dest(dirs.prod.images));
+    });
 
-/* ----------------------------------------------------------------
-|  Task config
-*/
+// ----------------------------------------------------------------
+// Start server & reload on CSS changes
 
-	gulp.task('watch', function() {
-		gulp.watch(dev.svg,  ['svg']);
-		gulp.watch(dev.sass, ['sass']);
-		gulp.watch(dev.img,  ['img']);
-		gulp.watch(dev.js,   ['js']);
-		gulp.watch(dev.jslibs,  ['jslibs']);
-	});
+    gulp.task('browser-sync', function() {
+        browserSync.init(null, { server: { baseDir: "./" } });
+    });
 
-	gulp.task('initialise', ['install', 'build']);
-	gulp.task('build', ['img', 'svg', 'sass', 'js', 'jslibs']);
-	gulp.task('default', ['install', 'clean', 'build', 'watch']);
+    // Function to call for reloading browsers
+    gulp.task('bs-reload', function () {
+        browserSync.reload();
+    });
+
+// ----------------------------------------------------------------
+// Tasks
+
+gulp.task('watch', function() {
+  gulp.watch(dirs.dev.js,     ['scripts']);
+  gulp.watch(dirs.dev.libs,   ['libs']);
+  gulp.watch(dirs.dev.data,   ['data']);
+  //
+  gulp.watch(dirs.dev.sass,   ['styles']);
+  gulp.watch(dirs.prod.styles,['bs-reload']);
+  //
+  gulp.watch(dirs.dev.fonts,  ['fonts']);
+  gulp.watch(dirs.dev.img,    ['rasters']);
+  gulp.watch(dirs.dev.svg,    ['vectors']);
+  //
+  gulp.watch(dirs.dev.html,   ['views']);
+  gulp.watch(dirs.prod.views, ['bs-reload']);
+});
+
+gulp.task('build', ['rasters', 'vectors', 'styles', 'fonts', 'scripts', 'libs', 'views', 'data']);
+gulp.task('start', ['bs-reload']);
+gulp.task('init', ['install', 'build']);
+gulp.task('default', ['build', 'watch', 'start']);

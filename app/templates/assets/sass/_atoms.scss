@@ -1,0 +1,21 @@
+/* -------
+  Atoms
+*/
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-color-visited; }
+
+  &:active {
+    color: $link-color-active;
+    border-bottom-color: $link-color; }
+
+  &:hover {
+    color: $link-color-hover;
+    border-bottom-color: $link-color;
+    border-bottom-width: 2px;
+    border-bottom-style: solid; }
+}

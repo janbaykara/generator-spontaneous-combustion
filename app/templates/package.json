@@ -1,20 +1,33 @@
 {
   "name": "<%=_.dasherize(PROJECTNAME)%>",
-  "version": "0.0.1",
-  "private": "true",
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "bower": "*",
-    "gulp": "^3.8.8",
     "del": "*",
+    "main-bower-files": "*",
+    "autoprefixer-core": "*",
+    "browser-sync": "^1.1.1",
+    "gulp": "^3.8.8",
     "gulp-install": "*",
-    "gulp-autoprefixer": "*",
     "gulp-cache": "*",
     "gulp-concat": "*",
-    "gulp-imagemin": "*",
     "gulp-rename": "*",
+    "gulp-size": "^0.4.0",
+    "gulp-util": "^2.2.18",
+    "gulp-watch": "^0.6.8",
+    "gulp-replace": "^0.4.0",
+    "gulp-load-plugins": "*",
     "gulp-sass": "*",
+    "gulp-postcss": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-csslint": "^0.1.4",
+    "gulp-minify-css": "^0.3.5",
     "gulp-sourcemaps": "*",
-    "gulp-svgmin": "*",
-    "gulp-uglify": "*"
-  }
+    "gulp-uglify": "*",
+    "gulp-imagemin": "*",
+    "gulp-svgmin": "*"
+  },
+  "author": "Jan Baykara <jan@baykara.co.uk> (http://jan.baykara.co.uk/)"
 }
