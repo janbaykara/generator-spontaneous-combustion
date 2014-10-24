@@ -1,18 +1,5 @@
 <?php error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-/*
-    Find-in-file codes:
-      #     :   Prefix for find-in-file dev notes
-      ###   :   Misc dev notes
-      >>>   :   Extend/expand this codeblock
-      <<<   :   Reduce/contract this codeblock
-      !!!   :   Fix broken functionality
-      @@@   :   View controlled by non-view module
-      ???   :   Reconsider this codeblock in future
-      +++   :   Add functionality
-      ---   :   Remove functionality
-*/
-
 class App {
 
   public function __construct() {
