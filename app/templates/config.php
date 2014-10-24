@@ -52,10 +52,10 @@ class App {
   public function document_head() { echo <<<HTML
 
       <!DOCTYPE html>
-      <!--[if lt IE 7]>      <html lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
-      <!--[if IE 7]>         <html lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
-      <!--[if IE 8]>         <html lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9" > <![endif]-->
-      <!--[if gt IE 8]><!--> <html lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js" > <!--<![endif]-->
+      <!--[if lt IE 7]>      <html ng-app='app' lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+      <!--[if IE 7]>         <html ng-app='app' lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
+      <!--[if IE 8]>         <html ng-app='app' lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js lt-ie9" > <![endif]-->
+      <!--[if gt IE 8]><!--> <html ng-app='app' lang="en" {$this->HTMLINJECT} xmlns:og="http://opengraphprotocol.org/schema/" itemscope itemtype="http://schema.org/{$this->SCHEMAROOT}" class="no-js" > <!--<![endif]-->
       <head>
 
           <!-- ********************************
