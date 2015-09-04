@@ -1,6 +1,6 @@
 {
   "name": "generator-spontaneous-combustion",
-  "version": "0.3.0",
+  "version": "4.0.0",
   "description": "Yeoman generator for a barebones SCSS-styled, Foundation-frameworked, AngularJS-wired, PHP-infrastructued web app.",
   "license": "MIT",
   "main": "app/index.js",
